@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-grid class="fundo">
+    <form novalidate [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <ion-row>
+        <ion-col size="12" text-center>
+          <img src="../assets/logo.png">
+          <h4 text-center><b>Votaê</b></h4>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Email, telefone ou identificação:</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Senha:</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button type="submit" expand="block" fill="outline" [disabled]="loginForm.invalid">Entrar</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" fill="outline" color="danger" href="cadastro">Cadastrar</ion-button>
+        </ion-col>
+        <ion-col size="6" text-center>
+          <small><a href="">Faça um teste</a></small>
+        </ion-col>
+        <ion-col size="6" text-center>
+          <small><a href="" style="color: red" href="esqueceu-senha">Esqueceu a Senha</a></small>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

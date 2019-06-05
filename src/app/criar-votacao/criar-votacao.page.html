@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Criar votação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" fill="outline" (click)="navPublica()">Criar votação pública</ion-button>
+        <p style="text-align: justify">Votações públicas são focadas, especialmente, no entreterimento das pessoas que utilizam
+          a nossa ferramenta, elas são gratuitas e qualquer tem a permissão para criar e registrar votos.</p>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" fill="outline" (click)="navPrivada()">Criar votação privada</ion-button>
+        <p style="text-align: justify">Votações privadas são restridas para um determinado grupo de pessoas, sendo no meio acadêmico,
+          empresarial, governamental ou outras áreas que necessitam. Criação exclusiva para assinantes 
+          premium.
+        </p>
+        <p style="color: gold; text-align: center"><b>TORNE-SE PREMIUM JÁ</b></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
