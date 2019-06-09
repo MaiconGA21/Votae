@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'criar-votacao-privada', loadChildren: './criar-votacao-privada/criar-votacao-privada.module#CriarVotacaoPrivadaPageModule' },
   { path: 'esqueceu-senha', loadChildren: './esqueceu-senha/esqueceu-senha.module#EsqueceuSenhaPageModule' },
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
-  { path: 'votacao-detalhe', loadChildren: './votacao-detalhe/votacao-detalhe.module#VotacaoDetalhePageModule' }
+  { path: 'votacao-detalhe', loadChildren: './votacao-detalhe/votacao-detalhe.module#VotacaoDetalhePageModule' },
+  { path: 'resultados', loadChildren: './resultados/resultados.module#ResultadosPageModule' }
 ];
 
 @NgModule({
