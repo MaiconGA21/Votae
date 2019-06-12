@@ -34,9 +34,12 @@ export class LoginPage implements OnInit {
   submitLogin() {
     this.afAuth.auth.signInWithEmailAndPassword(
       this.loginForm.value.email, this.loginForm.value.password)
-      .then(() => {
-        this.toastMessage('Logado com sucesso', "success");
-        this.navCtrl.navigateForward('home');
+      .then((response) => {
+        this.storage.set('user', response.user.uid)
+        .then(() => {
+          this.toastMessage('Logado com sucesso', "success");
+          this.navCtrl.navigateRoot('home');
+        })
       })
       .catch((error) => {
         if(error.code == 'auth/invalid-email'){

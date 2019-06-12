@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -11,14 +12,22 @@ import { VotacaoService } from '../votacao.service';
 export class HomePage {
   listaPr: any;
   listaPu: any;
+  uid: string;
 
   constructor(
     public navCtrl: NavController,
     public db: AngularFireDatabase,
-    public eleicaoService: VotacaoService
+    public eleicaoService: VotacaoService,
+    public storage: Storage
   ) {
     this.listaPr = this.db.list('/eleicao/privada').valueChanges();
     this.listaPu = this.db.list('/eleicao/publica').valueChanges();
+
+    this.storage.get('user')
+    .then((resolve) => {
+      this.uid = resolve;
+      console.log(this.uid);
+    })
   }
 
     abrirEleicao(eleicao) {
