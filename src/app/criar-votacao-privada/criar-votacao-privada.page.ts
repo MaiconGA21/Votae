@@ -7,32 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarVotacaoPrivadaPage implements OnInit {
 
-  qtdeCandidatos = [
-    { id: 2, qtde: '2 candidatos' },
-    { id: 3, qtde: '3 candidatos' },
-    { id: 4, qtde: '4 candidatos' },
-    { id: 5, qtde: '5 candidatos' }
-  ]
-
-  qtdeSelecionada: any;
+  qtdeCandidatos: number=0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  checarQtde(selec: number) {
-    if (
-      selec == 2 ||
-      selec == 3 ||
-      selec == 4 ||
-      selec == 5
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+  adicionarCandidatos(){
+    this.qtdeCandidatos++;
+    const candidatos = document.getElementById('candidatos');
+    candidatos.innerHTML +='<ion-col size="12">' + 
+    '<ion-card color="light"> '+  
+    '<ion-card-header style="background-color: red">'+
+    '<ion-card-title style="color: white">'+
+    'Candidato '+  (this.qtdeCandidatos) +
+    '</ion-card-title>'+
+  '</ion-card-header>'+
+  '<ion-card-content>'+
+    ' <ion-label > </ion-label><hr>'+        
+   '<ion-item>'+
+     '<ion-label>Nome do candidato:</ion-label>'+
+     '<ion-input type="text"></ion-input>'+
+   '</ion-item>'+
+   '<ion-item>'+
+     '<ion-label>Numero do candidato:</ion-label>'+
+     '<ion-input type="number"></ion-input>'+
+   '</ion-item>'+
+   '</ion-card-content>'+
+   '</ion-card>' +
+   '</ion-col>';
   }
 
+  
 
 }

@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
     AngularFireDatabaseModule,
     HttpClientModule,
     HttpModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

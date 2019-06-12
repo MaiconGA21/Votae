@@ -28,29 +28,20 @@
           <ion-input></ion-input>
         </ion-item>
       </ion-col>
-
+      
       <ion-col size="12">
         <ion-item>
-          <ion-label>Candidatos</ion-label>
-          <ion-select [(ngModel)]="qtdeSelecionada" id="candidatosSelect" placeholder="Quantidade">
-            <ion-select-option *ngFor="let qtde of qtdeCandidatos" value="{{qtde.id}}">{{qtde.qtde}}</ion-select-option>
-          </ion-select>
+          <ion-label>Adicionar candidato</ion-label>
+          <ion-buttons>
+            <ion-button (click)="adicionarCandidatos()">
+              <ion-icon name="add" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-item>
-
-        <ng-template [ngIf]="checarQtde(qtdeSelecionada)">
-          <ion-card>            
-            <ion-item>
-              <ion-label position="floating">Nome do candidato</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating">Numero do candidato</ion-label>
-              <ion-input type="number"></ion-input>
-            </ion-item>
-          </ion-card>
-        </ng-template>
       </ion-col>
-
+      
+      <div id="candidatos"></div>
+      
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Identificacao de quem pode votar</ion-label>

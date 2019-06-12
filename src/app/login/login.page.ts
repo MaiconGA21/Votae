@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController,
     public formBuilder: FormBuilder,
     public afAuth: AngularFireAuth,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public storage: Storage
     ) {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],

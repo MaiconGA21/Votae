@@ -1,5 +1,7 @@
 {
   "name": "Votae",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
