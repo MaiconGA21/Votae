@@ -32,6 +32,7 @@
           Data de fim: {{eleicaoPr.data.fim | date: 'dd/MM/yyyy'}}
         </ion-card-content>
       </ion-card>
+      <ion-badge color="danger" (click)="abrirResultadoEleicao(eleicaoPr)"><ion-icon ios="ios-podium-outline" md="md-podium"></ion-icon></ion-badge>
     </ion-slide>
   </ion-slides>
   <ion-card>
@@ -43,16 +44,17 @@
     <ion-slide *ngFor="let eleicaoPu of listaPu | async let idEleicao = index">
 
       <ion-card color="light" (click)="abrirEleicao(eleicaoPu)">
-        <ion-card-header>
-          <ion-card-title>{{eleicaoPu.nome}}</ion-card-title>
-          <ion-card-subtitle>TRF</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-          Data de inicio: {{eleicaoPu.data.inicio | date: 'dd/MM/yyyy'}} <br>
-          Data de fim: {{eleicaoPu.data.fim | date: 'dd/MM/yyyy'}}
-        </ion-card-content>
+            <ion-card-header>
+                <ion-card-title>{{eleicaoPu.nome}}</ion-card-title>
+                <ion-card-subtitle>TRF</ion-card-subtitle>
+              </ion-card-header>
+      
+              <ion-card-content>
+                Data de inicio: {{eleicaoPu.data.inicio | date: 'dd/MM/yyyy'}} <br>
+                Data de fim: {{eleicaoPu.data.fim | date: 'dd/MM/yyyy'}}
+              </ion-card-content>
       </ion-card>
+      <ion-badge color="danger" (click)="abrirResultadoEleicao(eleicaoPu)"><ion-icon ios="ios-podium-outline" md="md-podium"></ion-icon></ion-badge>
     </ion-slide>
   </ion-slides>
 
@@ -61,5 +63,4 @@
       <ion-icon name="add" style="color: white"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

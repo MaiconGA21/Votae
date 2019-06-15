@@ -30,12 +30,13 @@ export class AppComponent {
       title: 'Perfil',
       url: '/perfil',
       icon: 'person'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    }
+     }
+    // ,
+    // {
+    //   title: 'List',
+    //   url: '/list',
+    //   icon: 'list'
+    // }
   ];
 
   constructor(

@@ -13,19 +13,19 @@
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Nome votação</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="nomeVotacao"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Data inicio</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="dataInicio"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Data fim</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="dataFim"></ion-input>
         </ion-item>
       </ion-col>
       
@@ -45,11 +45,11 @@
       <ion-col size="12">
         <ion-item>
           <ion-label position="floating">Identificacao de quem pode votar</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="IDEleitor"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
-        <ion-button fill="outline" expand="block" href="home">Criar</ion-button>
+        <ion-button fill="outline" expand="block" (click)="criarNovaVotacao(nomeVotacao, dataFim, dataInicio, IDEleitor, candidato1)">Criar</ion-button>
       </ion-col>
       <ion-col>
         <ion-button fill="outline" color="danger" expand="block" href="home">Cancelar</ion-button>

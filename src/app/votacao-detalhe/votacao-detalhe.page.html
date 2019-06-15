@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content><br>
   <ion-card color="light">
     <ion-card-header>
       <ion-card-subtitle>Data de inicio: {{data.inicio | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
@@ -15,24 +15,24 @@
       <ion-card-subtitle>Está e uma votação muito interessante</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card *ngFor="let candidato of candidatos let i = index">
+    <ion-card class="corTeste" *ngFor="let candidato of candidatos let i = index">
       <ion-card-content>
         <ion-grid>
           <ion-row>
             <ion-col size="4">
               <ion-avatar>
-                <img src="assets/img/{{candidato.caminhoImg}}" />
+                <img src="assets/img/votaemmim.png" />
               </ion-avatar>
             </ion-col>
-            <ion-col size="8" align-self-center>
-              <ion-card-subtitle><b>{{candidato.nome}}</b></ion-card-subtitle>
-              <small>Nº: {{candidato.NumCandidato}}</small>
+            <ion-col size="8" align-self-center text-center>
+              <ion-card-subtitle><h1><b>{{candidato.nome}}</b></h1></ion-card-subtitle>
+              <h3>Nº: {{candidato.NumCandidato}}</h3>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col size="12">
-              <ion-button (click)="gravarVoto(candidatos,i)" expand="block" fill="outline" color="success">Votar</ion-button>
+              <ion-button (click)="gravarVoto(candidatos,i)" expand="block"  color="success">Votar</ion-button>
             </ion-col>
           </ion-row>
 

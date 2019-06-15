@@ -8,5 +8,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-subtitle>Data de inicio: {{data.inicio | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+      <ion-card-subtitle>Data de fim: {{data.fim | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+      <ion-card-subtitle>Está e uma votação muito interessante</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card *ngFor="let candidato of candidatos let i = index" class="corTeste">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <ion-avatar>
+                <img src="assets/img/votaemmim.png" />
+              </ion-avatar>
+            </ion-col>
+            <ion-col size="8" align-self-center>
+              <ion-card-subtitle>
+                <h1><b>{{candidato.nome}}</b></h1>
+              </ion-card-subtitle>
+              <h3>Nº: {{candidato.NumCandidato}}</h3>
+            </ion-col>
+            <ion-col text-center>
+              <b>VOTOS RECEBIDOS: {{candidato.votosRecebidos}} votos</b> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-card>
 
 </ion-content>
