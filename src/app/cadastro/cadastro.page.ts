@@ -70,7 +70,7 @@ export class CadastroPage implements OnInit {
   }
 
   EnviarBanco() {
-    this.db.database.ref('/usuarios').child(this.uid).push({
+    this.db.database.ref('/usuarios').child('').push({
       Nome: this.ENome,
       Email: this.EEmail,
       Telefone: this.ETelefone,

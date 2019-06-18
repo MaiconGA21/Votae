@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from '@angular/fire/database';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -14,13 +15,15 @@ import { Storage } from '@ionic/storage';
 export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
+  usuarios: any;
 
   constructor(
     public navCtrl: NavController,
     public formBuilder: FormBuilder,
     public afAuth: AngularFireAuth,
     public toastCtrl: ToastController,
-    public storage: Storage
+    public storage: Storage,
+    public db: AngularFireDatabase
     ) {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
@@ -36,7 +39,9 @@ export class LoginPage implements OnInit {
       this.loginForm.value.email, this.loginForm.value.password)
       .then((response) => {
         this.storage.set('user', response.user.uid)
-        .then(() => {
+        .then((response) => {
+          this.usuarios = this.db.list('/usuarios').valueChanges();   
+          console.log(this.usuarios)       
           this.toastMessage('Logado com sucesso', "success");
           this.navCtrl.navigateRoot('home');
         })
